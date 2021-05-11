@@ -8,15 +8,16 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div>
-            <form id="formPost">
-                <input type="text" id="sentBy" placeholder="Remetente">
-                <input type="text" id="sentTo" placeholder="Destinatário">
-                <input type="text" id="message" placeholder="Mensagem">
+        <div class="container">
+            <form id="formPost" style="display: table;">
+                <input type="text" id="sentBy" placeholder="Remetente" required>
+                <input type="text" id="sentTo" placeholder="Destinatário" required>
+                <input type="text-area" id="message" placeholder="Mensagem" required>
                 <input type="submit" value="Enviar">
             </form>
-            <form id="formGet">
-                <input type="text-area" id="messages" placeholder="Mensagens">
+        </div>
+        <div id="formGet" class="container">
+            <form>
                 <input type="submit" value="Receber">
             </form>
         </div>

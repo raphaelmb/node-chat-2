@@ -1,5 +1,14 @@
 const formPost = document.getElementById('formPost');
 const formGet = document.getElementById('formGet');
+const div = document.createElement("div");
+
+function appendData(data) {
+    data.forEach(item => {
+        const div = document.createElement('div');
+        div.innerHTML = `Remetente: ${item.sentBy} Destinatário: ${item.sentTo} Mensagem: ${item.message}`
+        formGet.appendChild(div);
+    });
+}
 
 formPost.addEventListener('submit', event => {
     event.preventDefault();
@@ -16,14 +25,13 @@ formPost.addEventListener('submit', event => {
     fetch(url, options);
 });
 
-formGet.addEventListener('submit', event => {
+formGet.addEventListener('click', event => {
     event.preventDefault();
-    let messages;
 
     const sentBy = document.getElementById('sentBy').value
 
     const url = `http://localhost:3000/messages/${sentBy}`;
     fetch(url).then(res => res.json()).then(data => {
-        console.log(data)
+        appendData(data);
     });
 });

@@ -33,8 +33,6 @@ app.post('/messages', (req, res) => {
 
     messages.push(register);
 
-    console.log(messages)
-
     res.status(201).send();
 });
 
