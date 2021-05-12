@@ -1,12 +1,13 @@
 const formPost = document.getElementById('formPost');
 const formGet = document.getElementById('formGet');
-const div = document.createElement("div");
+const div = document.getElementById('received');
 
 function appendData(data) {
+    div.innerHTML = '';
     data.forEach(item => {
-        const div = document.createElement('div');
-        div.innerHTML = `Remetente: ${item.sentBy} Destinatário: ${item.sentTo} Mensagem: ${item.message}`
-        formGet.appendChild(div);
+        const mes = document.createElement('div')
+        mes.innerHTML = `<strong>Remetente:</strong> ${item.sentBy} <strong> Mensagem:</strong> ${item.message}`;
+        div.appendChild(mes);
     });
 }
 

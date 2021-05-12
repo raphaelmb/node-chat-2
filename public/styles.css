@@ -16,17 +16,6 @@ input {
 	font-size: 14px;
 }
 
-button {
-	height: 50px;
-	font-size: 14px;
-	background: #069;
-	text-align: center;
-	line-height: 50px;
-	font-weight: bold;
-	color: #fff;
-	margin-top: 10px;
-}
-
 .container {
 	width: 500px;
 }
